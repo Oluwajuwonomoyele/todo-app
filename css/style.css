@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root{
+--bright-blue: hsl(220, 98%, 61%);
+--check-background: linear-gradient(270deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+}
+body {
+    --bg: hsl(235, 21%, 11%);
+    --li: hsl(235, 24%, 19%);
+    --fg: hsl(234, 39%, 85%);
+    --text: hsl(234, 39%, 85%); 
+    --a-hover: hsl(236, 33%, 92%);
+    --line-through: hsl(234, 11%, 52%);
+    --dark-grayish-blue: hsl(234, 11%, 52%);
+    --li-border: hsl(233, 14%, 35%);
+
+    --toggle-btn: url(/images/icon-sun.svg);
+    --bg-image: url('/images/bg-desktop-dark.jpg');
+
+    font-family: 'Josefin Sans', sans-serif;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: var(--bg);
+    color: var(--text);
+}
+.light {
+    --bg: hsl(0, 0%, 98%);
+    --fg: hsl(236, 33%, 92%);
+    --li: hsl(236, 33%, 92%);
+    --li-border: hsl(236, 9%, 61%);
+    --text: hsl(235, 19%, 35%);
+    --line-through: hsl(236, 9%, 61%);
+    --a-hover: hsl(235, 19%, 35%);;
+
+    --toggle-btn: url(/images/icon-moon.svg);
+    --bg-image: url('/images/bg-desktop-light.jpg');
+}
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+.bg-img {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background-image: var(--bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--a-hover);
+    padding-top: 6rem;
+    font-size: 1.5rem;
+    letter-spacing: 1rem;
+    margin-bottom: 3rem;
+}
+header .toggle-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-image: var(--toggle-btn);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.create-todo {
+    width: 100%;
+    background-color: var(--li);
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--dark-grayish-blue);
+    display: inline-block;
+}
+.create-todo [type="text"] {
+    background-color: var(--li);
+    border: none;
+    font-size: 1.3rem;
+    font-family: 'Josefin Sans', sans-serif;
+    width: 80%;
+    padding: 0.3rem;
+    caret-color: var(--bright-blue);
+    color: var(--text);
+}
+.create-todo [type="text"]:focus {
+    outline: none;
+}
+section {
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.todos {
+    width: 100%;
+    font-size: 1.2rem;
+}
+.todos li {
+    background-color: var(--li);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--li-border);
+}
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.todos li .circle {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.todos li.completed .circle {
+    background: var(--check-background);
+}
+.todos li .circle:hover {
+    border-color: var(--bright-blue);
+}
+.todos li .circle img {
+    display: none;
+}
+.todos li.completed .circle img {
+    display: block;
+    width: 70%;
+    height: 70%;
+}
+.todos li span {
+    flex: 1;
+}
+.todos li.completed span {
+    text-decoration: line-through;
+    color: var(--line-through);
+}
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.cross {
+    display: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.todos li:hover .cross {
+    display: block;  
+}
+.nav {
+    background-color: var(--li);
+    color: var(--dark-grayish-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+}
+.nav a {
+    text-decoration: none;
+    color: var(--dark-grayish-blue);
+    transition: all 0.3s ease;
+}
+.nav a:hover {
+    color: var(--a-hover);
+}
+.tabs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.tabs a.clicked {
+    color: var(--bright-blue);
+}
+.tabs-mobile {
+    display: none;
+}
+.dad {
+    text-align: center;
+    color: var(--dark-grayish-blue);
+    margin-bottom: 3rem;
+}
+
+
+

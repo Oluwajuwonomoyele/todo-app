@@ -1,0 +1,50 @@
+@media(max-width:786px) {
+    
+}
+@media(max-width:425px) {
+    .container {
+        max-width: 375px;
+    }
+    header h1 {
+        font-size: 2rem;
+        letter-spacing: 0.5rem;
+    }
+    .circle {
+        width: 1rem;
+        height: 1rem;
+    }
+    .create-todo [type="text"] {
+        font-size: 1rem;
+    }
+    .todos {
+        font-size: 1rem;
+    }
+    .nav {
+        font-size: 1rem;
+    }
+    .tabs {
+        display: none;
+    }
+    .tabs-mobile {
+    background-color: var(--li);
+    color: var(--dark-grayish-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    }
+    .tabs-mobile a {
+        text-decoration: none;
+        color: var(--dark-grayish-blue);
+        margin: 0 1rem;
+    }
+    .tabs-mobile a:hover {
+        color: var(--a-hover);
+    }
+}
+@media(max-width:375px) {
+    .container {
+        max-width: 320px;
+    }
+}
