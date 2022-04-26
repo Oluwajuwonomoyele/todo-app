@@ -28,19 +28,22 @@
     .tabs-mobile {
     background-color: var(--li);
     color: var(--dark-grayish-blue);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 1.5rem 1rem;
     font-size: 1rem;
+    display: block;
     }
-    .tabs-mobile a {
-        text-decoration: none;
-        color: var(--dark-grayish-blue);
+    .tabs-mobile .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tabs-mobile p {
         margin: 0 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
-    .tabs-mobile a:hover {
-        color: var(--a-hover);
+    .tabs-mobile p:hover {
+        color: var(--bright-blue);
     }
 }
 @media(max-width:375px) {

@@ -159,6 +159,7 @@ section {
 .todos li.completed span {
     text-decoration: line-through;
     color: var(--line-through);
+    font-style: italic;
 }
 .flex {
     display: flex;
@@ -166,12 +167,12 @@ section {
     gap: 1rem;
 }
 .cross {
-    display: none;
     cursor: pointer;
+    opacity: 0;
     transition: all 0.3s ease;
 }
 .todos li:hover .cross {
-    display: block;  
+    opacity: 1;
 }
 .nav {
     background-color: var(--li);
@@ -182,12 +183,11 @@ section {
     padding: 1.5rem;
     font-size: 1.2rem;
 }
-.nav a {
-    text-decoration: none;
-    color: var(--dark-grayish-blue);
+.nav p {
+    cursor: pointer;
     transition: all 0.3s ease;
 }
-.nav a:hover {
+.nav p:hover {
     color: var(--a-hover);
 }
 .tabs {
@@ -195,7 +195,7 @@ section {
     align-items: center;
     gap: 1rem;
 }
-.tabs a.clicked {
+.active  {
     color: var(--bright-blue);
 }
 .tabs-mobile {
@@ -206,6 +206,13 @@ section {
     color: var(--dark-grayish-blue);
     margin-bottom: 3rem;
 }
-
+.attribution {
+    color: var(--dark-grayish-blue);
+    text-align: center;
+}
+.attribution a {
+    text-decoration: none;
+    color: var(--bright-blue);
+}
 
 
