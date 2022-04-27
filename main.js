@@ -22,7 +22,30 @@ const addTodo = todo => {
 //update items left
 const updateItemsLeft = (number) => {
     itemsLeft.textContent = Number(itemsLeft.textContent) + number;
-}
+};
+
+//filter active todos
+const filterActive = () => {
+    children = ul.querySelectorAll('li');
+    children.forEach(child => {
+        child.style.display = "flex";
+        if(child.classList.contains('completed')){
+            child.style.display = "none";
+        }
+    })
+};
+
+//filter completed todos
+const filterCompleted = () => {
+    children = ul.querySelectorAll('li');
+    children.forEach(child => {
+        child.style.display = "flex";
+        if(!child.classList.contains('completed')){
+            child.style.display = "none";
+        }
+    })
+};
+
 
 //toggle light mode
 toggleMode.addEventListener('click', () => {
@@ -79,23 +102,10 @@ tabs.forEach(tab => {
            e.classList.remove('active')
        });
        tab.classList.add('active');
-       const children = ul.querySelectorAll('li');
        if(tab.textContent === "Active"){
-           children.forEach(child => {
-               if(child.classList.contains('completed')){
-                   child.style.display = "none";
-               }else{
-                   child.classList.display = "flex";
-               }
-           })
+           filterActive();
         } else if(tab.textContent === "Completed"){
-            children.forEach(child => {
-                if(!child.classList.contains('completed')){
-                    child.style.display = "none";
-                }else{
-                    child.style.display = "flex";
-                }
-            })
+           filterCompleted();
         }else {
             children.forEach(child => {
                 child.style.display = "flex"
@@ -103,3 +113,5 @@ tabs.forEach(tab => {
         }
    });
 });
+
+//drag and drop
