@@ -46,6 +46,16 @@ body {
     --toggle-btn: url(/images/icon-moon.svg);
     --bg-image: url('/images/bg-desktop-light.jpg');
 }
+::-webkit-scrollbar {
+    width: 0.6rem;
+}
+::-webkit-scrollbar-track {
+    background: var(--li);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--li-border);
+    border-radius: 20px;
+}
 .container {
     max-width: 650px;
     margin: 0 auto;
@@ -126,6 +136,7 @@ section {
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid var(--li-border);
+    transition: all 0.3s ease
 }
 .flex {
     display: flex;
@@ -160,6 +171,12 @@ section {
     text-decoration: line-through;
     color: var(--line-through);
     font-style: italic;
+}
+.todos li.dragged {
+    opacity: 0.9;
+}
+.todos li.entered {
+    filter: blur(1px);
 }
 .flex {
     display: flex;
